@@ -4,6 +4,10 @@
 
 **SteamVR on Linux is only supported on the latest version of the Steam Beta Client**. Make sure you are opted into the public Beta of the Steam client or SteamVR will not run due to missing dependencies.
 
+For discussions and questions, please use the SteamVR for Linux forum at http://steamcommunity.com/app/250820/discussions/5/.
+
+For bugs, please file an issue on this github issue tracker. https://github.com/ValveSoftware/SteamVR-for-Linux/issues
+
 ## GRAPHICS DRIVER REQUIREMENTS
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
