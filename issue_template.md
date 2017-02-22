@@ -2,7 +2,9 @@
 
 * Steam client version (build number or date): 
 * Distribution (e.g. Ubuntu): 
+* Graphics driver version (run nvidia-settings):
 * Opted into Steam client beta?: [Yes/No]
+* Opted into SteamVR beta?: [Yes/No]
 * Have you checked for system updates?: [Yes/No]
 
 #### Please describe your issue in as much detail as possible:
