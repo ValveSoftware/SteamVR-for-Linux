@@ -50,6 +50,7 @@ If you are using the Unity SteamVR plugin, **download the latest plugin from the
 There is a known issue with the Lab Renderer adaptive quality and Unity 5.6. If your project is using the SteamVR Lab Renderer, disable adaptive quality. (select your camera, and uncheck "Adaptive Quality Enabled" on the Valve Camera script pane)
 
 ## KNOWN ISSUES
+* OpenGL applications are currently too slow to use interactively; only the Vulkan Submit path is optimal. See: https://github.com/ValveSoftware/openvr/wiki/Vulkan
 * Desktop view in the dashboard currently doesn't work
 * Power management of base stations is not currently implemented
 * Headset audio device switching is not currently implemented
