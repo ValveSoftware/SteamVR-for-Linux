@@ -4,6 +4,8 @@
 
 **SteamVR on Linux is only supported on the latest version of the Steam Beta Client**. Make sure you are opted into the public Beta of the Steam client or SteamVR will not run due to missing dependencies.
 
+**SteamVR and VR apps require a special build of the 64-bit Vulkan loader, which is included in the Steam Runtime**. Make sure a system copy of libvulkan isn't being picked up by SteamVR or the games, which might involve disabling STEAM_RUNTIME_PREFER_HOST_LIBRARIES if you have a libvulkan installed on your system.
+
 For discussions and questions, please use the SteamVR for Linux forum at http://steamcommunity.com/app/250820/discussions/5/.
 
 For bugs, please file an issue on this github issue tracker. https://github.com/ValveSoftware/SteamVR-for-Linux/issues
