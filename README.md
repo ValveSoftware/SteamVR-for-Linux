@@ -16,7 +16,7 @@ SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers
 
 The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
 
-The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the development branch that is at exactly version 375.20.10.
+The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at exactly version 375.27.10.
 
 **AMD graphics require a pre-release version of the radv driver**. A build has been made available in this repository; clone it somewhere, and set the VK_ICD_FILENAMES  environment variable to point at the radeon_icd.x86_64.json in your cloned copy. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
  
