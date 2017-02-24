@@ -14,7 +14,11 @@ For bugs, please file an issue on this github issue tracker. https://github.com/
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
 
-**NVIDIA cards require version 375.27.10 of the NVIDIA Developer Beta Driver**. This can be downloaded from https://developer.nvidia.com/vulkan-driver. A Debian packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~mamarley/+archive/ubuntu/nvidia-dev/+packages. If you're also  using the graphics-drivers PPA, make sure the nvidia-dev PPA is pinned higher to use its driver over the nvidia-375 package in the graphics-drivers PPA. Thanks to Michael Marley for maintaining this PPA!
+**NVIDIA cards require version 375.27.10 of the NVIDIA Developer Beta Driver**. This can be downloaded from https://developer.nvidia.com/vulkan-driver. A Debian packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~mamarley/+archive/ubuntu/nvidia-dev/+packages. If you're also  using the graphics-drivers PPA, make sure the nvidia-dev PPA is pinned higher to use its driver over the nvidia-375 package in the graphics-drivers PPA. Thanks to Michael Marley for maintaining this PPA! Add the PPA with the following:
+
+```
+sudo add-apt-repository ppa:mamarley/nvidia-dev
+```
 
 AUR packages providing the NVIDIA Developer Beta Driver are available for Arch Linux thanks to [gehneo on the SteamVR for Linux forum](http://steamcommunity.com/app/250820/discussions/5/133257959063392200/). Install with the following:
 
