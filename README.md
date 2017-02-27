@@ -30,7 +30,7 @@ The NVIDIA driver supports direct mode, meaning the HMD will not appear on your 
 
 The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at exactly version 375.27.10.
 
-**AMD graphics require a pre-release version of the radv driver**. A build has been made available in this repository; clone it somewhere, and set the VK_ICD_FILENAMES  environment variable to point at the radeon_icd.x86_64.json in your cloned copy. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
+**AMD graphics require a specific tree of the radv driver**. Use the **radv-wip-steamvr** branch of this repository: https://github.com/airlied/mesa. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
  
 **Intel graphics are not currently supported**.
 
