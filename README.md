@@ -70,3 +70,4 @@ There is a known issue with the Lab Renderer adaptive quality and Unity 5.6. If 
 * Power management of base stations is not currently implemented
 * Headset audio device switching is not currently implemented
 * The VR status window isn't currently aware of direct mode being enabled or not, so the "enable direct mode" and "disable direct mode" buttons should not be used; direct mode is automatically enabled where supported
+* Firmware update of base stations is not supported (both USB and Bluetooth connections)
