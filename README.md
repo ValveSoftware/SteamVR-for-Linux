@@ -28,7 +28,7 @@ yaourt -S nvidia-vulkan-developer-beta lib32-nvidia-libgl-vulkan-developer-beta
 
 The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
 
-The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at exactly version 375.27.xx.
+The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at almost exactly version 375.27.xx.
 
 **AMD graphics require a specific tree of the radv driver**. Use the **radv-wip-steamvr** branch of this repository: https://github.com/airlied/mesa. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
  
