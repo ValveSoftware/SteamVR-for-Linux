@@ -14,7 +14,7 @@ For bugs, please file an issue on this github issue tracker. https://github.com/
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
 
-**NVIDIA cards require version 375.27.10 or 375.27.13 of the NVIDIA Developer Beta Driver**. This can be downloaded from https://developer.nvidia.com/vulkan-driver. A Debian packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~mamarley/+archive/ubuntu/nvidia-dev/+packages. If you're also  using the graphics-drivers PPA, make sure the nvidia-dev PPA is pinned higher to use its driver over the nvidia-375 package in the graphics-drivers PPA. Thanks to Michael Marley for maintaining this PPA! Add the PPA with the following:
+**NVIDIA cards require version 375.27.xx of the NVIDIA Developer Beta Driver**. This can be downloaded from https://developer.nvidia.com/vulkan-driver. A Debian packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~mamarley/+archive/ubuntu/nvidia-dev/+packages. If you're also  using the graphics-drivers PPA, make sure the nvidia-dev PPA is pinned higher to use its driver over the nvidia-375 package in the graphics-drivers PPA. Thanks to Michael Marley for maintaining this PPA! Add the PPA with the following:
 
 ```
 sudo add-apt-repository ppa:mamarley/nvidia-dev
@@ -28,7 +28,7 @@ yaourt -S nvidia-vulkan-developer-beta lib32-nvidia-libgl-vulkan-developer-beta
 
 The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
 
-The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at exactly version 375.27.10 or 375.27.13.
+The latest driver in NVIDIA's stable branch has a higher version number, but will not work. You need the driver from the vulkan development branch that is at exactly version 375.27.xx.
 
 **AMD graphics require a specific tree of the radv driver**. Use the **radv-wip-steamvr** branch of this repository: https://github.com/airlied/mesa. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
  
