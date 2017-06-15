@@ -49,6 +49,12 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="114d", ATTRS{idProduct}=="8a12", TAG+="uacce
 
 Version 1.0.7 of the OpenVR SDK has full support for Linux platforms: https://github.com/ValveSoftware/openvr
 
+## RUNTIME REQUIREMENTS
+
+SteamVR applications must run within the Steam runtime which supplies all the required shared libraries. 
+    ~/.steam/steam/ubuntu12_32/steam-runtime/run.sh ./my_steamvr_app
+will launch the application in the correct environment.
+
 ## UNREAL ENGINE
 
 Unreal Engine 4.16 will have support for SteamVR on Linux. The 4.16 branch is currently available in the UE4 GitHub repository for preview access: https://github.com/EpicGames (requires free Epic Games account).
