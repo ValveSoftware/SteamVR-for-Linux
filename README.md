@@ -55,7 +55,7 @@ SteamVR applications must run within the Steam runtime which supplies all the re
 
     ~/.steam/steam/ubuntu12_32/steam-runtime/run.sh ./my_steamvr_app
 
-will launch the application in the correct environment.
+will launch the application in the correct environment. See https://github.com/ValveSoftware/steam-runtime for more information about the Steam Runtime.
 
 ## UNREAL ENGINE
 
