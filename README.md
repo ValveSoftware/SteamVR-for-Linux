@@ -52,7 +52,9 @@ Version 1.0.7 of the OpenVR SDK has full support for Linux platforms: https://gi
 ## RUNTIME REQUIREMENTS
 
 SteamVR applications must run within the Steam runtime which supplies all the required shared libraries. 
+
     ~/.steam/steam/ubuntu12_32/steam-runtime/run.sh ./my_steamvr_app
+
 will launch the application in the correct environment.
 
 ## UNREAL ENGINE
