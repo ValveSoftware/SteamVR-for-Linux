@@ -12,7 +12,7 @@ For bugs, please file an issue on this github issue tracker. https://github.com/
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
 
-**NVIDIA cards require version 381.22 of the NVIDIA Driver or above**. A Debian packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
+**NVIDIA cards require version 381.26.08 of the NVIDIA Driver or above; current mainline driver, 381.22 does not have the needed extensions.**.
 
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa
