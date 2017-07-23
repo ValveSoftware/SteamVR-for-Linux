@@ -20,7 +20,7 @@ sudo add-apt-repository ppa:mamarley/nvidia-dev
 
 The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
 
-**AMD graphics require a specific tree of the radv driver**. Use the **radv-wip-steamvr** branch of this repository: https://github.com/airlied/mesa. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
+**AMD graphics require the radv driver from Mesa 17.3 or above** or mainline mesa after [this commit](https://cgit.freedesktop.org/mesa/mesa/commit/?id=bfed189ee0ddfe9aad2c8732094434b7e1c5166d). For proper VK_KHR_external_semaphore_fd and EXT_memory_object_fd support Linux 4.13-rc1 or newer is required. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
  
 **Intel graphics are not currently supported**.
 
