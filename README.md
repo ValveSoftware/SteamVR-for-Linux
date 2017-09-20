@@ -12,10 +12,10 @@ For bugs, please file an issue on this github issue tracker. https://github.com/
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
 
-**NVIDIA cards require version 381.26.13 of the NVIDIA Driver or above; current mainline driver, 381.22 does not have the needed extensions.** An Ubuntu-packaged version of this driver can be found in the "NVIDIA Development Drivers" PPA at https://launchpad.net/~mamarley/+archive/ubuntu/nvidia-dev/+packages, courtesy of Michael Marley.
+**NVIDIA cards require version 384.69 of the NVIDIA Driver or above and to use the SteamVR Beta** An Ubuntu-packaged version of this driver can be found in the "Graphics Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
 
 ```
-sudo add-apt-repository ppa:mamarley/nvidia-dev
+sudo add-apt-repository ppa:graphics-drivers/ppa
 ```
 
 The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
