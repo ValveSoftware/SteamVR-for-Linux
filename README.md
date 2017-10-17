@@ -66,7 +66,6 @@ Unreal Engine 4.16 will have support for SteamVR on Linux. The 4.16 branch is cu
 Unity development is not currently supported.
 
 ## KNOWN ISSUES
-* OpenGL applications are currently too slow to use interactively; only the Vulkan Submit path is optimal. See: https://github.com/ValveSoftware/openvr/wiki/Vulkan
 * Even with Vulkan applications, performance issues are still being worked on on both the runtime and the game engine side
 * ~~Desktop view in the dashboard currently doesn't work~~ (fixed in May 8 Steam client beta)
 * Power management of base stations is not currently implemented
