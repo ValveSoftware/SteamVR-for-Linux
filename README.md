@@ -2,7 +2,7 @@
 
 **This is a development release**. It is intended to allow developers to start creating SteamVR content for Linux platforms. Limited hardware support is provided.
 
-**SteamVR and VR apps require a special build of the 64-bit Vulkan loader, which is included in the Steam Runtime**. Make sure a system copy of libvulkan isn't being picked up by SteamVR or the games, which might involve disabling STEAM_RUNTIME_PREFER_HOST_LIBRARIES if you have a libvulkan installed on your system.
+**SteamVR and VR apps require at least a 1.0.54 64-bit Vulkan loader, such as the one included in the Steam Runtime**.
 
 For discussions and questions, please use the SteamVR for Linux forum at http://steamcommunity.com/app/250820/discussions/5/.
 
