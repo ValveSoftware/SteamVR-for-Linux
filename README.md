@@ -59,7 +59,7 @@ will launch the application in the correct environment. See https://github.com/V
 
 ## UNREAL ENGINE
 
-Unreal Engine 4.16 will have support for SteamVR on Linux. The 4.16 branch is currently available in the UE4 GitHub repository for preview access: https://github.com/EpicGames (requires free Epic Games account).
+Unreal Engine 4.16+ has support for SteamVR on Linux.
 
 ## UNITY DEVELOPMENT
 
