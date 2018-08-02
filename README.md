@@ -1,4 +1,4 @@
-## SteamVR Release Notes and Known Issues
+# SteamVR Release Notes and Known Issues
 
 **This is a development release**. It is intended to allow developers to start creating SteamVR content for Linux platforms. Limited hardware support is provided.
 
