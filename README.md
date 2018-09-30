@@ -61,7 +61,7 @@ will launch the application in the correct environment. See https://github.com/V
 
 Unreal Engine 4.16+ has support for SteamVR on Linux, using the OpenGL RHI (GL4 SM5)
 
-Starting with Unreal Engine 4.19, we recommend using the Vulkan RHI for VR, which requires a patch to the engine. See https://github.com/EpicGames/UnrealEngine/pull/4730 for details.
+Starting with Unreal Engine 4.19, we recommend using the Vulkan RHI for VR, which requires a patch to the engine. See https://github.com/EpicGames/UnrealEngine/pull/4730 for details. For 4.18, 4.19, and 4.20, this patch is also required: https://github.com/EpicGames/UnrealEngine/pull/5019
 
 ## UNITY DEVELOPMENT
 
