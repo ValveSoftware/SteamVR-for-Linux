@@ -32,25 +32,16 @@ kernel 4.13**.
 
 **Direct Mode requires a minimum of X.org server 1.20, Linux kernel 4.15 and Mesa 18.2**.
 
-An Ubuntu-packaged version of the Mesa driver can be found in the "Padoka PPA"
-at https://launchpad.net/~paulo-miguel-dias/+archive/ubuntu/pkppa
+An Ubuntu-packaged version of this driver can be found in the "SteamVR Experimental Graphics" PPA
+at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
 
+**If using this PPA, make sure a conflicting PPA like oibaf or padoka are not installed.**
+
+To setup "SteamVR Experimental Graphics" run:
 ```
-sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
+sudo add-apt-repository ppa:kisak/steamvr
 sudo apt dist-upgrade
-sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
-```
-
-Provide your user password when requested and reboot after the last command
-completes to ensure the driver has updated correctly.
-
-Once you've updated Mesa, update your X.org and kernel with SteamVR4Pk PPA
-at: https://launchpad.net/~kisak/+archive/ubuntu/steamvr4pk
-
-```
-sudo add-apt-repository ppa:kisak/steamvr4pk
-sudo apt dist-upgrade
-sudo apt install linux-generic-steamvr-18.04
+sudo apt install linux-generic-steamvr-18.04 xserver-xorg-core xserver-xorg-input-libinput xserver-xorg-video-amdgpu mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
 
 Provide your user password when requested and reboot after the last command
@@ -58,7 +49,7 @@ completes to ensure the driver has updated correctly.
 
 ### Intel
 
-**Intel graphics are not currently supported**.
+Intel graphics are not currently supported.
 
 ## USB DEVICE REQUIREMENTS
 
