@@ -10,18 +10,54 @@ For bugs, please file an issue on this github issue tracker. https://github.com/
 
 ## GRAPHICS DRIVER REQUIREMENTS
 
-SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers. 
+SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers.
 
-**NVIDIA cards require version 387.12 of the NVIDIA Driver or above and to use the SteamVR Beta** An Ubuntu-packaged version of this driver can be found in the "Graphics Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
+### NVIDIA
+
+**NVIDIA cards require version 387.12 of the NVIDIA Driver or above and to use
+the SteamVR Beta**.
+
+An Ubuntu-packaged version of this driver can be found in the "Graphics
+Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
 
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt install nvidia-driver-396 # Or any desired version number
 ```
 
-The NVIDIA driver supports direct mode, meaning the HMD will not appear on your desktop, or if it does, the display will have to be turned off in xrandr before being able to use VR.
+### AMD
 
-**AMD graphics require the radv driver from Mesa 17.3 or above** or mainline mesa after [this commit](https://cgit.freedesktop.org/mesa/mesa/commit/?id=bfed189ee0ddfe9aad2c8732094434b7e1c5166d). For proper VK_KHR_external_semaphore_fd and EXT_memory_object_fd support Linux 4.13-rc1 or newer is required. It doesn't support direct mode currently, so the HMD display will have to be positioned on your desktop in extended mode, and your system compositor disabled while using VR.
- 
+**SteamVR requires a minimum of Mesa 17.3 compiled with vulkan support and Linux
+kernel 4.13**.
+
+**Direct Mode requires a minimum of X.org server 1.20, Linux kernel 4.15 and Mesa 18.2**.
+
+An Ubuntu-packaged version of the Mesa driver can be found in the "Padoka PPA"
+at https://launchpad.net/~paulo-miguel-dias/+archive/ubuntu/pkppa
+
+```
+sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
+sudo apt dist-upgrade
+sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+```
+
+Provide your user password when requested and reboot after the last command
+completes to ensure the driver has updated correctly.
+
+Once you've updated Mesa, update your X.org and kernel with SteamVR4Pk PPA
+at: https://launchpad.net/~kisak/+archive/ubuntu/steamvr4pk
+
+```
+sudo add-apt-repository ppa:kisak/steamvr4pk
+sudo apt dist-upgrade
+sudo apt install linux-generic-steamvr-18.04
+```
+
+Provide your user password when requested and reboot after the last command
+completes to ensure the driver has updated correctly.
+
+### Intel
+
 **Intel graphics are not currently supported**.
 
 ## USB DEVICE REQUIREMENTS
