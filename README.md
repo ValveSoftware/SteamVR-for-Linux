@@ -40,6 +40,7 @@ at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
 To setup "SteamVR Experimental Graphics" run:
 ```
 sudo add-apt-repository ppa:kisak/steamvr
+sudo apt update
 sudo apt dist-upgrade
 sudo apt install linux-generic-steamvr-18.04 xserver-xorg-hwe-18.04 mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
