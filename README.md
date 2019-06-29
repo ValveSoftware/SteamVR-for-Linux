@@ -45,6 +45,9 @@ kernel 4.13**.
 An Ubuntu-packaged version of this driver can be found in the "SteamVR Experimental Graphics" PPA
 at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
 
+Note: The PPA has not been updated with Index Audio support. An update will land early next week
+once testing is completed.
+
 **If using this PPA, make sure a conflicting PPA like oibaf or padoka are not installed.**
 
 To setup "SteamVR Experimental Graphics" run:
