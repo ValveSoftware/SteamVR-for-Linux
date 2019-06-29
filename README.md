@@ -8,13 +8,18 @@ For discussions and questions, please use the SteamVR for Linux forum at http://
 
 For bugs, please file an issue on this github issue tracker. https://github.com/ValveSoftware/SteamVR-for-Linux/issues
 
+## Index FAQ
+
+ * The Index speakers are not working, how can I fix this?
+   * See the graphics drivers requirements section. Nvidia and AMD have issued driver updates to address this problem.
+
 ## GRAPHICS DRIVER REQUIREMENTS
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers.
 
 ### NVIDIA
 
-**NVIDIA cards require version 387.12 of the NVIDIA Driver or above and to use
+**NVIDIA cards require version 430.26 of the NVIDIA Driver or above and to use
 the SteamVR Beta**.
 
 An Ubuntu-packaged version of this driver can be found in the "Graphics
@@ -22,7 +27,7 @@ Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
 
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt install nvidia-driver-396 # Or any desired version number
+sudo apt install nvidia-driver-430 # Or any desired version number
 ```
 
 ### AMD
@@ -30,7 +35,12 @@ sudo apt install nvidia-driver-396 # Or any desired version number
 **SteamVR requires a minimum of Mesa 17.3 compiled with vulkan support and Linux
 kernel 4.13**.
 
+
 **Direct Mode requires a minimum of X.org server 1.20, Linux kernel 4.15 and Mesa 18.2**.
+
+**The Index HMD requires a kernel based on drm-next. Specifically these commits are needed:**
+  * https://cgit.freedesktop.org/drm/drm/commit/?id=e28ad544f462231d3fd081a7316339359efbb481
+  * https://cgit.freedesktop.org/drm/drm/commit/?id=30d62d4453e49f85dd17b2ba60bbb68b6593dba0
 
 An Ubuntu-packaged version of this driver can be found in the "SteamVR Experimental Graphics" PPA
 at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
