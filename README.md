@@ -38,11 +38,11 @@ kernel 4.13**.
 
 **Direct Mode requires a minimum of X.org server 1.20, Linux kernel 4.15 and Mesa 18.2**.
 
-**The Index HMD requires a kernel based on drm-next. Specifically these commits are needed:**
-  * https://cgit.freedesktop.org/drm/drm/commit/?id=e28ad544f462231d3fd081a7316339359efbb481
-  * https://cgit.freedesktop.org/drm/drm/commit/?id=30d62d4453e49f85dd17b2ba60bbb68b6593dba0
+**The Index HMD requires the Linux kernel version: 5.3+ for audio support.
+Additionally, the following point releases also contain the fix for Index
+audio: 5.2.3+, 5.1.21+, or 4.19.62+**
 
-An Ubuntu-packaged version of this driver can be found in the "SteamVR Experimental Graphics" PPA
+An Ubuntu-packaged version of these requirements can be found in the "SteamVR Experimental Graphics" PPA
 at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
 
 **If using this PPA, make sure a conflicting PPA like oibaf or padoka are not installed.**
