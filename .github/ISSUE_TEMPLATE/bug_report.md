@@ -1,8 +1,8 @@
 ---
-name: Performance Issue
-about: Report a performance problem with SteamVR
-title: "[PERF]"
-labels: perf
+name: Bug report
+about: Report a behavioural problem with SteamVR
+title: "[BUG]"
+labels: bug
 assignees: ''
 
 ---
@@ -21,7 +21,7 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem. If possible, also include screenshot of vrmonitor's timing graph.
+If applicable, add screenshots to help explain your problem.
 
 **System Information (please complete the following information):**
 - Distribution: [Arch/Manjaro/Ubuntu/etc.]
@@ -31,11 +31,7 @@ If applicable, add screenshots to help explain your problem. If possible, also i
 - Graphics driver version:  [run `nvidia-settings` or `vulkaninfo | grep driverInfo`:
 - Gist for SteamVR System Information: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingSystemReport.md)]
 
-**Performance Data (optional, but very helpful):**
-- Gist for perf top: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
-- Link to gpuvis trace: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
-
 **Additional context**
 Add any other context about the problem here.
 
-**Note:** Commenters who are also experiencing this issue are encouraged to include the "System Information" and "Perf Data" sections in their replies.
+**Note:** Commenters who are also experiencing this issue are encouraged to include the "System Information" section in their replies.
