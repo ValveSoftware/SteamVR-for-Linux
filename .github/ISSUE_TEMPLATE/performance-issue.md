@@ -32,6 +32,8 @@ If applicable, add screenshots to help explain your problem. If possible, also i
 - Gist for SteamVR System Information: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingSystemReport.md)]
 
 **Performance Data (optional, but very helpful):**
+- CPU:
+- GPU:
 - Gist for perf top: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
 - Link to gpuvis trace: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
 
