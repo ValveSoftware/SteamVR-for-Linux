@@ -1,7 +1,7 @@
 ---
 name: Performance Issue
 about: Report a performance problem with SteamVR
-title: "[PERF]"
+title: "[PERF] Issue Title"
 labels: perf
 assignees: ''
 
@@ -20,9 +20,6 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem. If possible, also include screenshot of vrmonitor's timing graph.
-
 **System Information (please complete the following information):**
 - Distribution: [Arch/Manjaro/Ubuntu/etc.]
 - SteamVR version: [E.g. 1.7.2]
@@ -36,6 +33,9 @@ If applicable, add screenshots to help explain your problem. If possible, also i
 - GPU:
 - Gist for perf top: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
 - Link to gpuvis trace: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingPerfData.md)]
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem. If possible, also include screenshot of vrmonitor's timing graph.
 
 **Additional context**
 Add any other context about the problem here.

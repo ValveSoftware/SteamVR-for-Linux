@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report a behavioural problem with SteamVR
-title: "[BUG]"
+title: "[BUG] Issue Title"
 labels: bug
 assignees: ''
 
@@ -20,9 +20,6 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
 **System Information (please complete the following information):**
 - Distribution: [Arch/Manjaro/Ubuntu/etc.]
 - SteamVR version: [E.g. 1.7.2]
@@ -30,6 +27,9 @@ If applicable, add screenshots to help explain your problem.
 - Opted into Steam client beta?: [Yes/No]
 - Graphics driver version:  [run `nvidia-settings` or `vulkaninfo | grep driverInfo`:
 - Gist for SteamVR System Information: [See [instructions](https://github.com/ValveSoftware/SteamVR-for-Linux/blob/master/CapturingSystemReport.md)]
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
