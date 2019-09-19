@@ -1,18 +1,25 @@
 #### How To Collect a Gpuvis Capture:
+
+##### First time setup:
+
 1. Open SteamVR Settings
 2. Click 'Developer'
 3. Ensure the 'Enable GPU profiling' checkbox is checked
 4. Restart SteamVR
 5. Follow the xterm prompt to complete the gpu profiler setup
-6. Open the following URL while SteamVR is running:
-  * http://localhost:8998/dashboard/debugcommands.html
-7. Click on the 'gpu\_profiler\_capture' button
+
+##### Performing a gpuvis capture:
+1. Open VRmonitor Menu -> Developer -> Debug Commands
+2. Click on the 'gpu\_profiler\_capture' button
   * Note: Try to activate the capture process while the issue is happening.
   * The gpuvis profiler only keeps a few seconds of buffered data in memory.
-7. In gpuvis, click 'File'->'Save as'
-8. Save the file to a location you can access
-9. Upload the file to Google Drive, Dropbox or your preferred file sharing site.
-10. Copy URL and paste it in the issue template
+3. In gpuvis, click 'File'->'Save as'
+4. Save the file to a location you can access
+4. Upload the file to Google Drive, Dropbox or your preferred file sharing site.
+5. Copy URL and paste it in the issue template
+
+Alternative to step 1-2:
+  * Execute `kill -10 $(pgrep -f gpu-trace)` on the commandline
 
 #### How To Collect a Perf Top Snapshot:
 1. Run 'sudo perf top' from the commandline
