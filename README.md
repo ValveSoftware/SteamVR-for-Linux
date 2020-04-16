@@ -95,3 +95,4 @@ Unity development is not currently supported.
 * Headset audio device switching is not currently implemented
 * The VR status window isn't currently aware of direct mode being enabled or not, so the "enable direct mode" and "disable direct mode" buttons should not be used; direct mode is automatically enabled where supported
 * Firmware update of base stations is not supported (both USB and Bluetooth connections)
+* Installing onto an XFS partition is not supported and results in an error: Installation not found (100).
