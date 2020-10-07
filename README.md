@@ -42,17 +42,21 @@ kernel 4.13**.
 Additionally, the following point releases also contain the fix for Index
 audio: 5.2.3+, 5.1.21+, or 4.19.62+**
 
-An Ubuntu-packaged version of these requirements can be found in the "SteamVR Experimental Graphics" PPA
-at https://launchpad.net/~kisak/+archive/ubuntu/steamvr
+Ubuntu 18.04's HWE graphic stack provides the above requirements:
+```
+sudo apt install linux-generic-hwe-18.04 xserver-xorg-hwe-18.04 mesa-vulkan-drivers mesa-vulkan-drivers:i386
+```
 
-**If using this PPA, make sure a conflicting PPA like oibaf or padoka are not installed.**
+The "SteamVR Experimental Graphics" PPA at https://launchpad.net/~kisak/+archive/ubuntu/steamvr is also available to help test new driver features.
+
+**Before using this PPA, make sure conflicting PPAs like oibaf is not installed.**
 
 To setup "SteamVR Experimental Graphics" run:
 ```
 sudo add-apt-repository ppa:kisak/steamvr
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install linux-generic-steamvr-18.04 xserver-xorg-hwe-18.04 mesa-vulkan-drivers mesa-vulkan-drivers:i386
+sudo apt install linux-generic-steamvr-20.04 mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
 
 Provide your user password when requested and reboot after the last command
