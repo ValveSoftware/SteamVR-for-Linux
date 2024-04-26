@@ -2,39 +2,24 @@
 
 **This is a development release**. It is intended to allow developers to start creating SteamVR content for Linux platforms. Limited hardware support is provided.
 
-**SteamVR and VR apps require at least a 1.0.54 64-bit Vulkan loader, such as the one included in the Steam Runtime**.
+**SteamVR and VR apps require a modern linux distribution with up to date graphics drivers. Ubuntu >= 20 or Arch for instance**.
 
 For discussions and questions, please use the SteamVR for Linux forum at http://steamcommunity.com/app/250820/discussions/5/.
 
 For bugs, please file an issue on this github issue tracker. https://github.com/ValveSoftware/SteamVR-for-Linux/issues
 
-## Index FAQ
-
- * The Index speakers are not working, how can I fix this?
-   * See the graphics drivers requirements section. Nvidia and AMD have issued driver updates to address this problem.
-
 ## GRAPHICS DRIVER REQUIREMENTS
 
 SteamVR is built on top of the Vulkan API and requires the latest Vulkan drivers.
 
-### NVIDIA
+### NVIDIA on Ubuntu
 
-**NVIDIA cards require version 430.26 of the NVIDIA Driver or above and to use
-the SteamVR Beta**.
-
-An Ubuntu-packaged version of this driver can be found in the "Graphics
-Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa.
-
-```
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt install nvidia-driver-430 # Or any desired version number
-```
+We recommend using the latest NVIDIA drivers from the "Graphics Drivers" PPA at https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
 
 ### AMD
 
 **SteamVR requires a minimum of Mesa 17.3 compiled with vulkan support and Linux
 kernel 4.13**.
-
 
 **Direct Mode requires a minimum of X.org server 1.20, Linux kernel 4.15 and Mesa 18.2**.
 
