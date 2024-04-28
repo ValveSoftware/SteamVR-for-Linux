@@ -78,7 +78,7 @@ Starting with Unreal Engine 4.19, we recommend using the Vulkan RHI for VR, whic
 Unity development is not currently supported.
 
 ## KNOWN ISSUES
-* Even with Vulkan applications, performance issues are still being worked on on both the runtime and the game engine side
+* Even with Vulkan applications, performance issues are still being worked on both the runtime and the game engine side
 * ~~Desktop view in the dashboard currently doesn't work~~ (fixed in May 8 Steam client beta)
 * Power management of base stations is not currently implemented
 * Headset audio device switching is not currently implemented
