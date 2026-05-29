@@ -4,7 +4,7 @@ These are error codes you may encounter within the SteamVR ecosystem. Generally,
 
 ##### OpenVR Error Codes
 
-When an OpenVR error turns up in vrmonitor, they will show up as _positive_ error codes in the status window. Rather than provide an exhaustive table here which would need to be maintained, just check `[openvr.h](https://github.com/ValveSoftware/openvr/blob/master/headers/openvr.h)` in the [OpenVR SDK](https://github.com/ValveSoftware/openvr). Look for `enum EVRInitError` to find the list.
+When an OpenVR error turns up in vrmonitor, they will show up as _positive_ error codes in the status window. Rather than provide an exhaustive table here which would need to be maintained, just check [`openvr.h`](https://github.com/ValveSoftware/openvr/blob/master/headers/openvr.h) in the [OpenVR SDK](https://github.com/ValveSoftware/openvr). Look for `enum EVRInitError` to find the list.
 
 ##### vrmonitor Error Codes
 
