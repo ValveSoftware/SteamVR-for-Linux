@@ -1,6 +1,6 @@
 #### SteamVR Error Codes
 
-These are error codes you may encounter within the SteamVR ecosystem. Generally, these will appear within vrmonitor (the program which actually shows you a 'SteamVR' window).
+These are error codes you may encounter within the SteamVR ecosystem. Generally, these will appear within vrmonitor (the program which actually shows you a 'SteamVR' window). If any error suggests checking a logfile, you'll find that file in the Steam logs directory. On Linux, that's `~/.steam/steam/logs/` so (for instance) if something says to check `vrcompositor.txt` then the file to look at will be `~/.steam/steam/logs/vrcompositor.txt`.
 
 ##### OpenVR Error Codes
 
@@ -31,8 +31,8 @@ These are a few error codes which can show up on the VR-capable Steam Link clien
 
 | Code | Name | Meaning
 | ---- | ------------- | ------------------ |
-| 450 | `StreamError_HostNotResponding` | Steam Link tried to connect to the host we were told to connect to, but it didn't actually answer. |
-| 451 | `StreamError_ConnectedNoVideo` | Steam Link connected, but the host is not sending any video. |
+| 450 | `StreamError_HostNotResponding` | Steam Link tried to connect to the host we were told to connect to, but it didn't actually answer. **This may mean you're running a VPN on your PC; check and try turning it off if so.** |
+| 451 | `StreamError_ConnectedNoVideo` | Steam Link connected, but the host is not sending any video. (Look in `driver_vrlink.txt` on the host for more information.) |
 | 452 | `StreamError_ConnectedNoDecode` | Steam Link connected and is receiving video, but the local decoder is not giving back decoded frames. |
 | 616 | `StreamCheck_WifiNotConnected` | Your headset doesn't seem to have a WiFi connection right now. |
-| 617 | `StreamCheck_StreamNotPossible` | Your headset and your computer don't seem to be on the same network. |
+| 617 | `StreamCheck_StreamNotPossible` | Your headset and your computer don't seem to be on the same network. **This may mean you're running a VPN on your Quest; check and try turning it off if so.** |
