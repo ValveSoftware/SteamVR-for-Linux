@@ -61,7 +61,7 @@ while IFS= read -r line || [[ -n $line ]]; do
 	BAND_START=`echo $BAND_RANGE | cut -f1 -d ' ' | xargs`
 	BAND_END=`echo $BAND_RANGE | cut -f3 -d ' ' | xargs`
 
-	if [ $BAND_START -le 6000 ] && [ $BAND_END -ge 6999 ]; then
+	if [ $BAND_START -le 6999 ] && [ $BAND_END -ge 6000 ]; then
 		REG_FEATURES=$FEATURES
 		REG_PASSIVESCAN=`echo $REG_FEATURES | grep "PASSIVE-SCAN"`
 	fi
