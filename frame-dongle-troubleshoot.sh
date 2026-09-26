@@ -6,7 +6,8 @@
 #
 # It's written to have the first part of the line easily parsed automatically, for later use;
 # the first word will be PROBLEM:<class>: to denote actual problems (and easily surface what 
-# type they are, and either FAILURE or SUCCESS on the final line.
+# type they are, INFO:<class>: for something intended for the user to read, 
+# and either FAILURE or SUCCESS on the final line.
 
 echo -- Steam Frame Wireless Dongle Troubleshooting script v0.1
 
@@ -20,15 +21,20 @@ KERNEL_MINOR=`echo $KERNEL_CURRENT | cut -f2 -d '.'`
 DRIVER=`lsmod | grep "^rtw"`
 PROBLEMS_FOUND=0
 
-if [ $KERNEL_MAJOR -lt 7 ]; then
-	echo "PROBLEM:KERNEL: You are on kernel $KERNEL_CURRENT, and must be on kernel 7.2 or later."
-	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
-elif [ $KERNEL_MAJOR -eq 7 ] && [ $KERNEL_MINOR -lt 2 ]; then
-	echo "PROBLEM:KERNEL: You are on kernel $KERNEL_CURRENT, and must be on kernel 7.2 or later."
-	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
-elif [ -z "$DRIVER" ]; then
-	echo "PROBLEM:DRIVER: You're on kernel $KERNEL_CURRENT, but it seems to be missing the Realtek rtw89 driver needed for the dongle."
-	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
+# Because the driver IS manually installed on SteamOS even on older kernels -- and could theoretically
+# be on other machines -- we'll look for the driver and only check kernel version if the driver isn't
+# present.
+if [ -z "$DRIVER" ]; then
+	if [ $KERNEL_MAJOR -lt 7 ]; then
+		echo "PROBLEM:KERNEL: You are on kernel $KERNEL_CURRENT, and must be on kernel 7.2 or later for the driver to be present."
+		PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
+	elif [ $KERNEL_MAJOR -eq 7 ] && [ $KERNEL_MINOR -lt 2 ]; then
+		echo "PROBLEM:KERNEL: You are on kernel $KERNEL_CURRENT, and must be on kernel 7.2 or later for the driver to be present."
+		PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
+	else 
+		echo "PROBLEM:DRIVER: While you're on a recent enough kernel, the rtw89 driver appears to be missing and may not have been compiled for your distro."
+		PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
+	fi
 fi
 
 
@@ -74,8 +80,41 @@ elif [ -z "$REG_FEATURES" ]; then
 	echo "PROBLEM:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, which seems to lack a 6Ghz band; the dongle will not work."
 	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
 elif [[ -z $REG_PASSIVESCAN ]]; then
-	echo "PROBLEM:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, and the 6Ghz band only has features $REG_FEATURES; without PASSIVE-SCAN the dongle may not work." 
-	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
+	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, and the 6Ghz band only has features $REG_FEATURES; without PASSIVE-SCAN the dongle *may* not work, depending on your distro." 
+fi
+
+
+
+# FIREWALL RULES -------------------------------------------------------------
+
+FIREWALL_ACTIVE=0
+
+if [ -e "`which firewall-cmd`" ]; then
+	if [ "`firewall-cmd --state`" = "running" ]; then
+		FIREWALL_ACTIVE=1
+	fi
+elif [ -e "`which ufw`" ]; then
+	if [ "`whoami`" = "root" ]; then
+		UFW_STATUS=`ufw status numbered | head -1 | cut -f2 -d ' '`
+		if [ "$UFW_STATUS" = "active" ]; then
+			FIREWALL_ACTIVE=1
+		fi
+	else
+		echo "INFO:FIREWALL: Found ufw (Uncomplicated FireWall) installed, but we aren't root so we can't get firewall status. Skipping check."
+	fi	
+fi
+
+if [ $FIREWALL_ACTIVE -eq 1 ]; then
+	echo "INFO:FIREWALL: "
+	echo "INFO:FIREWALL: You appear to have a firewall active on your system, but this script cannot check the rules."
+	echo "INFO:FIREWALL: Make sure you have the following ports open, or the Frame and the Steam client won't see each other:"
+	echo "INFO:FIREWALL:    TCP: 27036, 27037"
+	echo "INFO:FIREWALL:    UDP: 27031, 27036"
+	echo "INFO:FIREWALL: In addition, you will need the following ports open for actual VR streaming:"
+	echo "INFO:FIREWALL:    UDP: 10400, 10401"
+	echo "INFO:FIREWALL: "
+	echo "INFO:FIREWALL: It's quite possible you have it running but no real restrictions set, so this may not be a problem!"
+	echo "INFO:FIREWALL: "
 fi
 
 
