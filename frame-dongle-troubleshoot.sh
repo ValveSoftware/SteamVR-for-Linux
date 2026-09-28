@@ -98,12 +98,8 @@ elif [ -z "$REG_FEATURES" ]; then
 	echo ""
 	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
 	FATAL_PROBLEMS=$((FATAL_PROBLEMS + 1))
-elif [[ $REG_BANDSIZE -le 900 ]]; then
-	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY, which does not use the entire 6Ghz band. This is fine, UNLESS the headset has erroneously set itself to the US regulatory domain."
-	echo "INFO:REGDOMAIN: Run 'iw reg get' on the *headset's* version of Linux, and if it says 'US' use 'sudo iw reg set $REG_COUNTRY' to correct this."
-	echo ""
 elif [[ -z $REG_PASSIVESCAN ]]; then
-	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, and the 6Ghz band only has features $REG_FEATURES; without PASSIVE-SCAN it seems the dongle *may* not work, depending on your distro. (More information on this as we figure out more.)" 
+	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, and the 6Ghz band only has features $REG_FEATURES; without PASSIVE-SCAN it seems the dongle *may* not work, depending on your distro." 
 	echo ""
 fi
 
