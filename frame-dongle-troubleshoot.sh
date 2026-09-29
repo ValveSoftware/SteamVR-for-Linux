@@ -9,7 +9,7 @@
 # type they are, INFO:<class>: for something intended for the user to read, 
 # and either FAILURE or SUCCESS on the final line.
 
-echo -- Steam Frame Wireless Dongle Troubleshooting script v0.3
+echo -- Steam Frame Wireless Dongle Troubleshooting script v0.4
 echo --
 echo -- Lines beginning with PROBLEM are issues which will prevent the dongle from working.
 echo -- Lines beginning with INFO may not prevent the dongle from working, but are worth looking into.
@@ -21,7 +21,7 @@ echo ""
 KERNEL_CURRENT=`uname -r | cut -f1 -d '-'`
 KERNEL_MAJOR=`echo $KERNEL_CURRENT | cut -f1 -d '.'`
 KERNEL_MINOR=`echo $KERNEL_CURRENT | cut -f2 -d '.'`
-DRIVER=`lsmod | grep "^rtw"`
+DRIVER=`lsmod | grep "^rtw89_8852cu"`
 PROBLEMS_FOUND=0
 FATAL_PROBLEMS=0
 
