@@ -9,7 +9,7 @@
 # type they are, INFO:<class>: for something intended for the user to read, 
 # and either FAILURE or SUCCESS on the final line.
 
-echo -- Steam Frame Wireless Dongle Troubleshooting script v0.3
+echo -- Steam Frame Wireless Dongle Troubleshooting script v0.4
 echo --
 echo -- Lines beginning with PROBLEM are issues which will prevent the dongle from working.
 echo -- Lines beginning with INFO may not prevent the dongle from working, but are worth looking into.
@@ -88,7 +88,8 @@ if [ $REG_COUNTRY = "00" ] || [ $REG_RULESET = "DFS-UNSET" ]; then
 	echo ""
 	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
 elif [ -z "$REG_FEATURES" ]; then
-	echo "PROBLEM:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, which seems to lack a 6Ghz band; the dongle will not work."
+	echo "PROBLEM:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, which seems to lack a 6Ghz band;" 
+	echo "PROBLEM:REGDOMAIN: an upcoming beta will allow the dongle to work in a non-6Ghz mode, but it will not work for the moment."
 	echo "PROBLEM:REGDOMAIN: "
 	echo "PROBLEM:REGDOMAIN: If $REG_COUNTRY *is* your appropriate regulatory domain, please *do not* just blithely change your regulatory domain"
 	echo "PROBLEM:REGDOMAIN: to US (or something similar)! The current recommended workaround is to use USB tethering." 
@@ -99,7 +100,10 @@ elif [ -z "$REG_FEATURES" ]; then
 	PROBLEMS_FOUND=$((PROBLEMS_FOUND + 1))
 	FATAL_PROBLEMS=$((FATAL_PROBLEMS + 1))
 elif [[ -z $REG_PASSIVESCAN ]]; then
-	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, and the 6Ghz band only has features $REG_FEATURES; without PASSIVE-SCAN it seems the dongle *may* not work, depending on your distro." 
+	echo "INFO:REGDOMAIN: Your regulatory domain is set to $REG_COUNTRY and using the $REG_RULESET rules set, which lacks PASSIVE-SCAN. On *some* Linux distros this"
+	echo "INFO:REGDOMAIN: may cause problems seeing the headset. But it also might just work!"
+	echo "INFO:REGDOMAIN: "
+	echo "INFO:REGDOMAIN: If this affects you, this will be addressed with alternative logic in an upcoming beta. Hold tight!" 
 	echo ""
 fi
 
@@ -146,7 +150,7 @@ fi
 if [ $PROBLEMS_FOUND -eq 0 ]; then
 	echo "SUCCESS: None of the most obvious/common problems seem to have turned up!"
 elif [ $FATAL_PROBLEMS -gt 0 ]; then
-	echo "FAILURE: At least one problem above is technically fatal, and may mean the dongle will simply not work for you."
+	echo "FAILURE: At least one problem above is technically fatal *at the moment*, and may mean the dongle will simply not work for you until a future beta."
 else
 	echo "FAILURE: The problems above will need to be addressed before the dongle will work."
 fi
