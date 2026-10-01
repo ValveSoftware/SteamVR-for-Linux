@@ -21,7 +21,7 @@ echo ""
 KERNEL_CURRENT=`uname -r | cut -f1 -d '-'`
 KERNEL_MAJOR=`echo $KERNEL_CURRENT | cut -f1 -d '.'`
 KERNEL_MINOR=`echo $KERNEL_CURRENT | cut -f2 -d '.'`
-DRIVER=`lsmod | grep "^rtw"`
+DRIVER=`lsmod | grep "^rtw89_8852cu"`
 PROBLEMS_FOUND=0
 FATAL_PROBLEMS=0
 
