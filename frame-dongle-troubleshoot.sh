@@ -9,7 +9,7 @@
 # type they are, INFO:<class>: for something intended for the user to read, 
 # and either FAILURE or SUCCESS on the final line.
 
-echo -- Steam Frame Wireless Dongle Troubleshooting script v0.4
+echo -- Steam Frame Wireless Dongle Troubleshooting script v0.5
 echo --
 echo -- Lines beginning with PROBLEM are issues which will prevent the dongle from working.
 echo -- Lines beginning with INFO may not prevent the dongle from working, but are worth looking into.
@@ -104,6 +104,7 @@ elif [[ -z $REG_PASSIVESCAN ]]; then
 	echo "INFO:REGDOMAIN: may cause problems seeing the headset. But it also might just work!"
 	echo "INFO:REGDOMAIN: "
 	echo "INFO:REGDOMAIN: If this affects you, this will be addressed with alternative logic in an upcoming beta. Hold tight!" 
+	echo "INFO:REGDOMAIN: "
 	echo ""
 fi
 
@@ -144,13 +145,47 @@ if [ $FIREWALL_ACTIVE -eq 1 ]; then
 fi
 
 
+# VPN ------------------------------------------------------------------------
+
+TAILSCALE_IFACE=`nmcli device status | grep ^tailscale | head -1 | cut -f1 -d ' '`
+TAILSCALE_STATE=""
+OVPN_IFACE=`nmcli device status | grep ^tun | head -1 | cut -f1 -d ' '`
+OVPN_STATE=""
+
+if [ -n "$TAILSCALE_IFACE" ]; then
+	TAILSCALE_STATE=`ip link show $TAILSCALE_IFACE | grep 'UP'`
+fi
+
+if [ -n "$OVPN_IFACE" ]; then
+	OVPN_STATE=`ip link show $OVPN_IFACE | grep 'UP'`
+fi
+
+if [ -n "$TAILSCALE_STATE" ]; then
+	echo "INFO:VPN: "
+	echo "INFO:VPN: You're using Tailscale. If Tailscale is operating in exit-node mode, this can absolutely break"
+	echo "INFO:VPN: SteamVR in multiple interesting ways. If Tailscale is operating in overlay mode it SHOULDN'T"
+	echo "INFO:VPN: break things, but you may stil want to try temporarily disabling tailscale to check. For more"
+	echo "INFO:VPN: info on exit nodes, check https://tailscale.com/docs/features/exit-nodes"
+	echo "INFO:VPN: "
+	echo ""
+fi
+
+if [ -n "$OVPN_STATE" ]; then
+	echo "INFO:VPN: "
+	echo "INFO:VPN: You're using a VPN of some sort. Depending on the way you have routing set up, it may"
+	echo "INFO:VPN: block the dongle from working. To test if this is the case, you can temporarily disable"
+	echo "INFO:VPN: your VPN."
+	echo "INFO:VPN: "
+	echo ""
+fi
+
 
 # SUMMARY --------------------------------------------------------------------
 
 if [ $PROBLEMS_FOUND -eq 0 ]; then
 	echo "SUCCESS: None of the most obvious/common problems seem to have turned up!"
 elif [ $FATAL_PROBLEMS -gt 0 ]; then
-	echo "FAILURE: At least one problem above is technically fatal *at the moment*, and may mean the dongle will simply not work for you until a future beta."
+	echo "FAILURE: At least one problem above is technically fatal *at the moment*, and may mean the dongle will simply not work for you until a future beta. You may want to make sure you're on both the SteamOS beta (on Frame), Steam beta (on host), and SteamVR beta (on host) in case this has already been fixed."
 else
 	echo "FAILURE: The problems above will need to be addressed before the dongle will work."
 fi
